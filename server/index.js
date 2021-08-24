@@ -12,6 +12,8 @@ const logger = require('pino')()
         process.exit(1)
     }
 
+    // TODO use generic error handler
+
     logger.info(`Server running at port ${port}`)
 
     process.on('uncaughtException', (err) => {
