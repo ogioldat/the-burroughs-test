@@ -14,6 +14,10 @@ Your API should accept a date as a parameter, and return the payment dates for t
 
 ## Start up
 
+### Add .env
+
+Crate `.env` file and copy `.env.example` file's content to it
+
 ### Install all dependenncies
 
 ```
