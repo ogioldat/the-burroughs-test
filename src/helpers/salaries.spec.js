@@ -1,5 +1,5 @@
 const { getBaseSalaryDate, getBonusSalaryDate } = require('./salaries')
-const {format} = require('../utils/dates')
+const { format } = require('../utils/dates')
 
 describe('salaries helpers', () => {
     describe('getBaseSalaryDate', () => {

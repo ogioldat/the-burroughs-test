@@ -14,6 +14,10 @@ Your API should accept a date as a parameter, and return the payment dates for t
 
 ## Start up
 
+### Add .env
+
+Crate `.env` file and copy `.env.example` file's content to it
+
 ### Requirements
 
 ```
@@ -36,3 +40,11 @@ yarn start:dev // development mode
 
 yarn test // run tests
 ```
+
+You should be able to display salaries.csv by entering the endpoint
+
+```
+localhost:3000/salaries
+```
+
+**Providing the right `date` param inn format YYYY-MM-DD**

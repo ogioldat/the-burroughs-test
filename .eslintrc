@@ -1,13 +1,9 @@
 {
     "parserOptions": {
-      "parser": "babel-eslint",
-      "ecmaVersion": 2021
+        "parser": "babel-eslint",
+        "ecmaVersion": 2021
     },
-    "extends": [
-      "standard",
-      "plugin:jest/recommended",
-      "prettier"
-    ],
+    "extends": ["standard", "plugin:jest/recommended", "prettier"],
     "env": {
         "browser": true,
         "commonjs": true,
