@@ -7,8 +7,6 @@ const { getBaseSalaryDate, getBonusSalaryDate } = require('../helpers/salaries')
 const getSalariesSchema = Joi.object({
     date: Joi.date()
         .format('YYYY-MM-DD')
-        .optional()
-        .default(format(new Date())),
 })
 
 exports.getSalaries = async (input) => {
