@@ -1,4 +1,4 @@
-const { addMonths } = require("date-fns");
+const { addMonths, parseISO } = require("date-fns");
 const { Parser } = require("json2csv");
 const { format } = require("../utils/dates");
 const Joi = require("../validation/joi");
@@ -14,9 +14,12 @@ const getSalariesSchema = Joi.object({
         .default(format(new Date())),
 });
 
-exports.getSalaries = async (input) => {
-    await getSalariesSchema.validate(input)
-    let currentDate = input.date;
+exports.getSalaries = (input) => {
+    input.date = parseISO(input.date)
+
+    getSalariesSchema.validate(input);
+
+    let { date: currentDate } = input;
     const monthsInterval = 12;
 
     const fields = ["baseSalary", "bonusSalary"];
