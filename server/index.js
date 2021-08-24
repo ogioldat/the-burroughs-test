@@ -2,6 +2,7 @@ const {
     server: { port },
 } = require("config");
 const server = require("./server");
+const logger = require("pino")();
 
 (async () => {
     try {
@@ -11,16 +12,14 @@ const server = require("./server");
         process.exit(1);
     }
 
-    // TODO use logger
-    console.log(`Server running at port ${port}`);
+    logger.info(`Server running at port ${port}`);
 
     process.on("uncaughtException", (err) => {
         throw err;
     });
 
     process.on("unhandledRejection", (err) => {
-        // TODO use logger
-        console.log(err);
+        logger.error(err);
         process.exit(1);
     });
 })();
