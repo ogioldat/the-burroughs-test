@@ -1,32 +1,7 @@
-const { endOfMonth, addMonths } = require("date-fns");
+const { addMonths } = require("date-fns");
 const { Parser } = require("json2csv");
-const {
-    isWeekDay,
-    getNearestDateByDOW,
-    format,
-    nthDayOfTheMonth,
-} = require("../utils/dates");
-
-const getBaseSalaryDate = (date) => {
-    const lastDayOfMonth = endOfMonth(date);
-
-    if (isWeekDay(lastDayOfMonth)) {
-        return getNearestDateByDOW(lastDayOfMonth, "Friday");
-    }
-    return lastDayOfMonth;
-};
-
-const getBonusSalaryDate = (date) => {
-    const nextMonthsDay = addMonths(date, 1)
-    const fifteenthDay = nthDayOfTheMonth(nextMonthsDay, 15 - 1);
-
-    if (isWeekDay(fifteenthDay)) {
-        return getNearestDateByDOW(fifteenthDay, "Wednesday", {
-            pastDates: false,
-        });
-    }
-    return fifteenthDay;
-};
+const { format } = require("../utils/dates");
+const { getBaseSalaryDate, getBonusSalaryDate } = require("../helpers/salaries");
 
 exports.getSalaries = (input) => {
     let currentDate = input.date;
