@@ -1,9 +1,22 @@
 const { addMonths } = require("date-fns");
 const { Parser } = require("json2csv");
 const { format } = require("../utils/dates");
-const { getBaseSalaryDate, getBonusSalaryDate } = require("../helpers/salaries");
+const Joi = require("../validation/joi");
+const {
+    getBaseSalaryDate,
+    getBonusSalaryDate,
+} = require("../helpers/salaries");
+
+const getSalariesSchema = Joi.object({
+    date: Joi.date()
+        .format("YYYY-MM-DD")
+        .optional()
+        .default(format(new Date())),
+});
 
 exports.getSalaries = (input) => {
+    getSalariesSchema.validate(input)
+
     let currentDate = input.date;
     const monthsInterval = 12;
 
