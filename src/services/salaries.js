@@ -14,10 +14,10 @@ const getSalariesSchema = Joi.object({
         .default(format(new Date())),
 });
 
-exports.getSalaries = (input) => {
+exports.getSalaries = async (input) => {
     input.date = parseISO(input.date)
 
-    getSalariesSchema.validate(input);
+    await getSalariesSchema.validate(input);
 
     let { date: currentDate } = input;
     const monthsInterval = 12;
