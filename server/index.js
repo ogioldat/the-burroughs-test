@@ -8,7 +8,7 @@ const logger = require("pino")();
     try {
         await server.start();
     } catch (err) {
-        console.error(err);
+        logger.error(err);
         process.exit(1);
     }
 
