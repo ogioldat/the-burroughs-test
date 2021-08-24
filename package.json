@@ -10,7 +10,8 @@
   "scripts": {
     "start:dev": "nodemon server",
     "start": "node server",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@hapi/hapi": "^20.1.5",
@@ -19,7 +20,9 @@
     "config": "^3.3.6",
     "date-fns": "^2.23.0",
     "pino": "^6.13.1",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ramda": "^0.27.1",
+    "json2csv": "^5.0.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.12",
