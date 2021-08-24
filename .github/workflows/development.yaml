@@ -1,19 +1,21 @@
-name: Tests - CI/CD
+name: Dev - CI/CD
 on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      NODE_ENV: test
+    test:
+        runs-on: ubuntu-latest
+        env:
+            NODE_ENV: test
 
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn install
+            - name: Install dependencies
+              run: yarn install
 
-      - name: Run tests
-        run: yarn test
+            - name: Lint code
+              run: yarn lint
 
+            - name: Run tests
+              run: yarn test
