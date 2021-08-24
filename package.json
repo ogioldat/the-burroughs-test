@@ -8,6 +8,8 @@
   "author": "Tomasz Ogiołda",
   "license": "MIT",
   "scripts": {
+    "start:dev": "nodemon index.js",
+    "start": "node index.js",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -16,7 +18,8 @@
     "@hapi/joi-date": "^2.0.1",
     "config": "^3.3.6",
     "date-fns": "^2.23.0",
-    "pino": "^6.13.1"
+    "pino": "^6.13.1",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12",
