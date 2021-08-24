@@ -14,9 +14,8 @@ const getSalariesSchema = Joi.object({
         .default(format(new Date())),
 });
 
-exports.getSalaries = (input) => {
-    getSalariesSchema.validate(input)
-
+exports.getSalaries = async (input) => {
+    await getSalariesSchema.validate(input)
     let currentDate = input.date;
     const monthsInterval = 12;
 
