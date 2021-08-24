@@ -1,25 +1,25 @@
 const {
     server: { port },
-} = require("config");
-const server = require("./server");
-const logger = require("pino")();
+} = require('config')
+const server = require('./server')
+const logger = require('pino')()
 
-(async () => {
+;(async () => {
     try {
-        await server.start();
+        await server.start()
     } catch (err) {
-        logger.error(err);
-        process.exit(1);
+        logger.error(err)
+        process.exit(1)
     }
 
-    logger.info(`Server running at port ${port}`);
+    logger.info(`Server running at port ${port}`)
 
-    process.on("uncaughtException", (err) => {
-        throw err;
-    });
+    process.on('uncaughtException', (err) => {
+        throw err
+    })
 
-    process.on("unhandledRejection", (err) => {
-        logger.error(err);
-        process.exit(1);
-    });
-})();
+    process.on('unhandledRejection', (err) => {
+        logger.error(err)
+        process.exit(1)
+    })
+})()

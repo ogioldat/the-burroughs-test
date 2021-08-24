@@ -1,44 +1,47 @@
 {
-  "name": "the-burroughs-test",
-  "version": "1.0.0",
-  "engines": {
-    "node": ">=14.17.5"
-  },
-  "main": "server",
-  "author": "Tomasz Ogiołda",
-  "license": "MIT",
-  "scripts": {
-    "start:dev": "nodemon server",
-    "start": "node server",
-    "prepare": "husky install",
-    "test": "jest --verbose"
-  },
-  "dependencies": {
-    "@hapi/hapi": "^20.1.5",
-    "@hapi/joi": "^17.1.1",
-    "@hapi/joi-date": "^2.0.1",
-    "config": "^3.3.6",
-    "date-fns": "^2.23.0",
-    "pino": "^6.13.1",
-    "dotenv": "^10.0.0",
-    "ramda": "^0.27.1",
-    "json2csv": "^5.0.6"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12",
-    "jest": "^27.0.6",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.1",
-    "eslint-plugin-jest": "^24.4.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "husky": ">=6",
-    "lint-staged": ">=10"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
-  }
+    "name": "the-burroughs-test",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">=14.17.5"
+    },
+    "main": "server",
+    "author": "Tomasz Ogiołda",
+    "license": "MIT",
+    "scripts": {
+        "start:dev": "nodemon server",
+        "start": "node server",
+        "prepare": "husky install",
+        "test": "jest --verbose",
+        "lint": "eslint \"**/*.js\" --fix",
+        "prettier": "prettier"
+    },
+    "dependencies": {
+        "@hapi/hapi": "^20.1.5",
+        "@hapi/joi": "^17.1.1",
+        "@hapi/joi-date": "^2.0.1",
+        "config": "^3.3.6",
+        "date-fns": "^2.23.0",
+        "pino": "^6.13.1",
+        "dotenv": "^10.0.0",
+        "ramda": "^0.27.1",
+        "json2csv": "^5.0.6",
+        "prettier": "2.3.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12",
+        "jest": "^27.0.6",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.24.1",
+        "eslint-plugin-jest": "^24.4.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-standard": "^5.0.0",
+        "husky": ">=6",
+        "lint-staged": ">=10"
+    },
+    "lint-staged": {
+        "*.js": "eslint --cache --fix"
+    }
 }

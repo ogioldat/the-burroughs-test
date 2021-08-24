@@ -27,10 +27,8 @@ describe('salaries service', () => {
         test('it validates input', async () => {
             const date = new Date('2021-13-3')
 
-            await expect(
-                getSalaries({ date })
-            ).rejects.toMatchObject({
-                message: 'Invalid time value'
+            await expect(getSalaries({ date })).rejects.toMatchObject({
+                message: 'Invalid time value',
             })
         })
     })

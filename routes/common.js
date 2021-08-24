@@ -4,6 +4,6 @@ module.exports = [
     {
         method: 'GET',
         path: '/salaries',
-        config: getSalariesController
-    }
+        config: getSalariesController,
+    },
 ]
