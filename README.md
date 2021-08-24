@@ -47,4 +47,4 @@ You should be able to display salaries.csv by entering the endpoint
 localhost:3000/salaries
 ```
 
-**Providing the right `date` param inn format YYYY-MM-DD**
+**IMPORTANT!  `date` param in is required (format YYYY-MM-DD)**
